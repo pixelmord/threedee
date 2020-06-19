@@ -31,7 +31,7 @@ export const Index = () => {
    */
   return (
     <Fragment>
-      <h1>Hello Medium this is react-three-fiber!</h1>
+      <h1>This is react-three-fiber!</h1>
       <Canvas>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
