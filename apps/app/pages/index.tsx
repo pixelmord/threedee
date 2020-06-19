@@ -1,14 +1,26 @@
 
 import React, { useRef, useState, Fragment } from 'react'
 import { Canvas, useFrame } from 'react-three-fiber'
+import { Euler } from 'three'
 
 function Box(props) {
   // This reference will give us direct access to the mesh
-  const mesh = useRef()
+  const mesh = useRef<JSX.IntrinsicElements['mesh']>()
   // Set up state for the hovered and active state
   const [hovered, setHover] = useState(false)
   const [active, setActive] = useState(false)
-
+  // Rotate mesh every frame, this is outside of React without overhead
+  useFrame(() => {
+    const rotation = mesh.current.rotation as Euler;
+    if (hovered && !active) {
+      rotation.z += 0.01
+      rotation.x += 0.01
+    }
+    if (hovered && active) {
+      rotation.y += 0.02
+      rotation.x += 0.06
+    }
+  })
 
   return (
     <mesh
