@@ -9,3 +9,17 @@ This project was generated using [Nx](https://nx.dev).
 🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
 
 [NX readme](nx_readme.md)
+
+## Development
+
+To install:
+
+```javascript
+yarn install
+```
+
+To start the server run:
+
+```javascript
+yarn nx serve app
+```
